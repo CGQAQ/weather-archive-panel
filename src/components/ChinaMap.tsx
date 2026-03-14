@@ -145,8 +145,8 @@ export default function ChinaMap({ data, mode, hourlyData }: Props) {
   }, []);
 
   return (
-    <div className="relative map-container" ref={containerRef}>
-      <svg viewBox="0 0 900 700" className="w-full h-auto">
+    <div className="relative map-container h-full flex items-center justify-center" ref={containerRef}>
+      <svg viewBox="0 0 900 700" className="max-w-full max-h-full">
         {/* Non-hovered provinces */}
         {paths
           .filter((p) => p.name !== hoveredProvince)
@@ -261,7 +261,7 @@ export default function ChinaMap({ data, mode, hourlyData }: Props) {
       )}
 
       {/* Legend */}
-      <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur rounded-lg p-3 shadow dark:bg-gray-800/90 dark:text-gray-400">
+      <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur rounded-lg p-3 shadow dark:bg-gray-800/90 dark:text-gray-400">
         <div className="text-xs text-gray-500 mb-1 dark:text-gray-400">
           {mode === "temperature"
             ? "温度 (°C)"

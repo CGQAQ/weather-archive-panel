@@ -64,8 +64,8 @@ export default function RankList({ data, mode, historyStats }: Props) {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden dark:bg-gray-800">
-      <div className="bg-gradient-to-r from-blue-600 to-blue-500 px-4 py-3">
+    <div className="bg-white rounded-xl shadow-lg overflow-hidden dark:bg-gray-800 h-full flex flex-col">
+      <div className="bg-gradient-to-r from-blue-600 to-blue-500 px-4 py-3 shrink-0">
         <h3 className="text-white font-bold text-sm">
           {mode === "temperature"
             ? "🌡️ 温度排行"
@@ -76,7 +76,7 @@ export default function RankList({ data, mode, historyStats }: Props) {
                 : "🌫️ 空气质量排行"}
         </h3>
       </div>
-      <div className="max-h-[600px] overflow-y-auto">
+      <div className="overflow-y-auto flex-1 min-h-0">
         <table className="w-full text-sm">
           <thead className="bg-gray-50 sticky top-0 dark:bg-gray-700">
             <tr className="text-xs text-gray-500 dark:text-gray-400">

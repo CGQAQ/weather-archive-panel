@@ -135,8 +135,8 @@ export default function Home() {
   }, [weatherData, mode, fetchHistory]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:bg-gray-900 dark:from-gray-900 dark:to-gray-900">
-      <header className="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-20 dark:bg-gray-800/80 dark:border-gray-700">
+    <div className="h-screen flex flex-col overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 dark:bg-gray-900 dark:from-gray-900 dark:to-gray-900">
+      <header className="bg-white/80 backdrop-blur-sm border-b border-gray-200 z-20 shrink-0 dark:bg-gray-800/80 dark:border-gray-700">
         <div className="max-w-[1600px] mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
           <div>
             <h1 className="text-xl font-bold text-gray-800 dark:text-white">
@@ -156,9 +156,9 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="max-w-[1600px] mx-auto px-6 py-6">
-        <div className="grid grid-cols-1 xl:grid-cols-[1fr_380px] gap-6">
-          <div className="bg-white rounded-xl shadow-lg p-4 overflow-hidden dark:bg-gray-800">
+      <main className="max-w-[1600px] w-full mx-auto px-6 py-6 flex-1 min-h-0">
+        <div className="grid grid-cols-1 xl:grid-cols-[1fr_380px] gap-6 h-full">
+          <div className="bg-white rounded-xl shadow-lg p-4 overflow-hidden dark:bg-gray-800 min-h-0 flex flex-col">
             {weatherData.length > 0 ? (
               <ChinaMap
                 data={weatherData}
@@ -179,7 +179,7 @@ export default function Home() {
             )}
           </div>
 
-          <div>
+          <div className="min-h-0">
             {weatherData.length > 0 && (
               <RankList
                 data={weatherData}
